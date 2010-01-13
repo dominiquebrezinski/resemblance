@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Resemblance</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Resemblance</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/resemblance_rb.html">
+                resemblance.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <table>
+<tr><td valign="top">Author:</td><td>Dominique Brezinski (mailto: dominique.brezinski@gmail.com)
+
+</td></tr>
+<tr><td valign="top">Copyright:</td><td>Copyright 2010 Dominique Brezinski
+
+</td></tr>
+<tr><td valign="top">License:</td><td>GPLv3
+
+</td></tr>
+</table>
+<p>
+<a href="Resemblance.html">Resemblance</a> is an implementation of Ngram
+and Ngraph techniques for identifying chunks of text with similarities. The
+techniques are implementations and adaptions of &quot;Detecting short
+passages of similar text in large document collections&quot; by Caroline
+Lyon, James Malcolm and Bob Dickerson.
+</p>
+<p>
+While looking for a solution to detect similarity in short chunks of text,
+in the range of 20-300 words, it became clear that short (length 3 or 4)
+Ngraphs of individual characters function better than Ngrams of words.
+Similarity in this case is meant to encompass what a human reader might
+discern as similar in style/structure/intent without resorting to syntax
+analysis. However, for use-cases like plagiarism detection, Ngrams of words
+is more appropriate for identifying same or similar phrases and sentences.
+</p>
+<p>
+The implementation provides both Ngraph and Ngram constructs to satisfy
+both use-cases.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000003">evaluate_text_against_corpus</a>&nbsp;&nbsp;
+      <a href="#M000002">generate_n_set</a>&nbsp;&nbsp;
+      <a href="#M000001">generate_testable_corpus</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Class <a href="Resemblance/NGramSet.html" class="link">Resemblance::NGramSet</a><br />
+Class <a href="Resemblance/NGraphSet.html" class="link">Resemblance::NGraphSet</a><br />
+Class <a href="Resemblance/ResultsClusterer.html" class="link">Resemblance::ResultsClusterer</a><br />
+
+    </div>
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DEFAULT_N</td>
+          <td>=</td>
+          <td class="context-item-value">3</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000003" class="method-detail">
+        <a name="M000003"></a>
+
+        <div class="method-heading">
+          <a href="Resemblance.src/M000003.html" target="Code" class="method-signature"
+            onclick="popupCode('Resemblance.src/M000003.html');return false;">
+          <span class="method-name">evaluate_text_against_corpus</span><span class="method-args">(text, corpus = {}, options = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The highest level interface for interaction with <a
+href="Resemblance.html">Resemblance</a> that facilitates evaluating a text
+chunk against a corpus. It combines <a
+href="Resemblance.html#M000002">generate_n_set</a> and <a
+href="Resemblance.html#M000001">generate_testable_corpus</a> and iterates
+over the corpus evaluating text against each entry.
+</p>
+<table>
+<tr><td valign="top"><tt>text</tt>:</td><td>chunk of text to evaluate against the given corpus
+
+</td></tr>
+<tr><td valign="top"><tt>corpus</tt>:</td><td>see <a href="Resemblance.html#M000001">generate_testable_corpus</a> for
+format
+
+</td></tr>
+<tr><td valign="top"><tt>options</tt>:</td><td>a hash of options, specifically the key :evaluation_method that has the
+corresponding value of :ngraph or :ngram. :ngraph is the default if options
+are not specified. See <a href="Resemblance/NGraphSet.html">NGraphSet</a>
+or <a href="Resemblance/NGramSet.html">NGramSet</a> for additional options
+that can be passed.
+
+</td></tr>
+</table>
+<p>
+Returns an array where the first entry is the maximum R value seen across
+the corpus and the second entry is an array of arrays (result set)
+containing the name of the corpus item and the R value for that item.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000002" class="method-detail">
+        <a name="M000002"></a>
+
+        <div class="method-heading">
+          <a href="Resemblance.src/M000002.html" target="Code" class="method-signature"
+            onclick="popupCode('Resemblance.src/M000002.html');return false;">
+          <span class="method-name">generate_n_set</span><span class="method-args">(text, options = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Generate a set of ngraphs or ngrams for the given text. The result is an
+instantiation of <a href="Resemblance/NGraphSet.html">NGraphSet</a> or <a
+href="Resemblance/NGramSet.html">NGramSet</a> suitable for inspection and
+comparision against other same class objects.
+</p>
+<table>
+<tr><td valign="top"><tt>text</tt>:</td><td>the text used to generate the N set for future comparisons and evaluation
+
+</td></tr>
+<tr><td valign="top"><tt>options</tt>:</td><td>a hash of options, specifically the key :evaluation_method that has the
+corresponding value of :ngraph or :ngram. :ngraph is the default if options
+are not specified. See <a href="Resemblance/NGraphSet.html">NGraphSet</a>
+or <a href="Resemblance/NGramSet.html">NGramSet</a> for additional options
+that can be passed.
+
+</td></tr>
+</table>
+        </div>
+      </div>
+
+      <div id="method-M000001" class="method-detail">
+        <a name="M000001"></a>
+
+        <div class="method-heading">
+          <a href="Resemblance.src/M000001.html" target="Code" class="method-signature"
+            onclick="popupCode('Resemblance.src/M000001.html');return false;">
+          <span class="method-name">generate_testable_corpus</span><span class="method-args">(corpus, options = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Generate a corpus for measuring similarity against.
+</p>
+<table>
+<tr><td valign="top"><tt>corpus</tt>:</td><td>an enumerable of name-value pairs where the name identifies the text and
+value is the text itself. Example: { :the_name =&gt; &quot;the text&quot; }
+or [ [&quot;the name&quot;, &quot;the text&quot;] ]
+
+</td></tr>
+<tr><td valign="top"><tt>options</tt>:</td><td>a hash of options, specifically the key :evaluation_method that has the
+corresponding value of :ngraph or :ngram. :ngraph is the default if options
+are not specified. See <a href="Resemblance/NGraphSet.html">NGraphSet</a>
+or <a href="Resemblance/NGramSet.html">NGramSet</a> for additional options
+that can be passed.
+
+</td></tr>
+</table>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

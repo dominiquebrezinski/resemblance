@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Resemblance::NGraphSet</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Resemblance::NGraphSet</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/resemblance_rb.html">
+                resemblance.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Encompasses the set of Ngraphs for a given text and operations over the
+set.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000009">data</a>&nbsp;&nbsp;
+      <a href="#M000010">data_size</a>&nbsp;&nbsp;
+      <a href="#M000005">intersection</a>&nbsp;&nbsp;
+      <a href="#M000004">new</a>&nbsp;&nbsp;
+      <a href="#M000007">r</a>&nbsp;&nbsp;
+      <a href="#M000008">set_where_n_is</a>&nbsp;&nbsp;
+      <a href="#M000006">union</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000004" class="method-detail">
+        <a name="M000004"></a>
+
+        <div class="method-heading">
+          <a href="NGraphSet.src/M000004.html" target="Code" class="method-signature"
+            onclick="popupCode('NGraphSet.src/M000004.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(text, options = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <table>
+<tr><td valign="top"><tt>text</tt>:</td><td>the text for evaluation
+
+</td></tr>
+<tr><td valign="top"><tt>options</tt>:</td><td>a hash of options to control text preparation, tokenization and the length
+of the Ngraph. :character_removal_set must be a RegExp that matches the
+characters to be removed from the text prior to tokenization. The default
+is /[^a-zA-Z0-9 ]/. :token_separator must be a String or RegExp that
+identifies the token (word) separator in the prepared text. The default is
+/\s*/ which has the effect of removing whitespace and splitting the text
+into individul characters. :n is the length of the Ngraphs and defaults to
+3.
+
+</td></tr>
+</table>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000009" class="method-detail">
+        <a name="M000009"></a>
+
+        <div class="method-heading">
+          <a href="NGraphSet.src/M000009.html" target="Code" class="method-signature"
+            onclick="popupCode('NGraphSet.src/M000009.html');return false;">
+          <span class="method-name">data</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The unaltered, original text
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000010" class="method-detail">
+        <a name="M000010"></a>
+
+        <div class="method-heading">
+          <a href="NGraphSet.src/M000010.html" target="Code" class="method-signature"
+            onclick="popupCode('NGraphSet.src/M000010.html');return false;">
+          <span class="method-name">data_size</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The length, in characters, or the original text
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000005" class="method-detail">
+        <a name="M000005"></a>
+
+        <div class="method-heading">
+          <a href="NGraphSet.src/M000005.html" target="Code" class="method-signature"
+            onclick="popupCode('NGraphSet.src/M000005.html');return false;">
+          <span class="method-name">intersection</span><span class="method-args">(compare_to, n = DEFAULT_N)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="NGraphSet.html#M000005">intersection</a> of Ngraphs
+between self and another instance of <a
+href="NGraphSet.html">NGraphSet</a>.
+</p>
+<table>
+<tr><td valign="top"><tt>compare_to</tt>:</td><td>another instance of <a href="NGraphSet.html">NGraphSet</a>
+
+</td></tr>
+<tr><td valign="top"><tt>n</tt>:</td><td>length of Ngraphs to use in operation
+
+</td></tr>
+</table>
+        </div>
+      </div>
+
+      <div id="method-M000007" class="method-detail">
+        <a name="M000007"></a>
+
+        <div class="method-heading">
+          <a href="NGraphSet.src/M000007.html" target="Code" class="method-signature"
+            onclick="popupCode('NGraphSet.src/M000007.html');return false;">
+          <span class="method-name">r</span><span class="method-args">(compare_to, n = DEFAULT_N)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns R (resemblance measure) between self and another instance of <a
+href="NGraphSet.html">NGraphSet</a>.
+</p>
+<table>
+<tr><td valign="top"><tt>compare_to</tt>:</td><td>another instance of <a href="NGraphSet.html">NGraphSet</a>
+
+</td></tr>
+<tr><td valign="top"><tt>n</tt>:</td><td>length of Ngraphs to use in operation
+
+</td></tr>
+</table>
+        </div>
+      </div>
+
+      <div id="method-M000008" class="method-detail">
+        <a name="M000008"></a>
+
+        <div class="method-heading">
+          <a href="NGraphSet.src/M000008.html" target="Code" class="method-signature"
+            onclick="popupCode('NGraphSet.src/M000008.html');return false;">
+          <span class="method-name">set_where_n_is</span><span class="method-args">(n)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a Ngraph set using n length
+</p>
+<table>
+<tr><td valign="top"><tt>n</tt>:</td><td>the Ngraph length
+
+</td></tr>
+</table>
+        </div>
+      </div>
+
+      <div id="method-M000006" class="method-detail">
+        <a name="M000006"></a>
+
+        <div class="method-heading">
+          <a href="NGraphSet.src/M000006.html" target="Code" class="method-signature"
+            onclick="popupCode('NGraphSet.src/M000006.html');return false;">
+          <span class="method-name">union</span><span class="method-args">(compare_to, n = DEFAULT_N)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="NGraphSet.html#M000006">union</a> of Ngraphs between
+self and another instance of <a href="NGraphSet.html">NGraphSet</a>.
+</p>
+<table>
+<tr><td valign="top"><tt>compare_to</tt>:</td><td>another instance of <a href="NGraphSet.html">NGraphSet</a>
+
+</td></tr>
+<tr><td valign="top"><tt>n</tt>:</td><td>length of Ngraphs to use in operation
+
+</td></tr>
+</table>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
