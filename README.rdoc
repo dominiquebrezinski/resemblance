@@ -1,20 +1,20 @@
-# = Resemblance
-# == Detecting similarities in small chunks of text
-# ----
-# Resemblance is an implementation of Ngram and Ngraph techniques
-# for identifying chunks of text with similarities. The techniques are 
-# implementations and adaptions of "Detecting short passages of similar  
-# text in large document collections" by Caroline Lyon, James Malcolm 
-# and Bob Dickerson.
-#
-# While looking for a solution to detect similarity in short chunks of text,
-# in the range of 20-300 words, it became clear that short (length 3 or 4) 
-# Ngraphs of individual characters function better than Ngrams of words.
-# Similarity in this case is meant to encompass what a human reader might
-# discern as similar in style/structure/intent without resorting to syntax 
-# analysis. However, for use-cases like plagiarism detection, Ngrams of 
-# words is more appropriate for identifying same or similar phrases and
-# sentences.
-#
-# The implementation provides both Ngraph and Ngram constructs to satisfy
-# both use-cases.
+= Resemblance
+== Detecting similarities in small chunks of text
+----
+Resemblance is an implementation of Ngram and Ngraph techniques
+for identifying chunks of text with similarities. The techniques are 
+implementations and adaptions of "Detecting short passages of similar  
+text in large document collections" by Caroline Lyon, James Malcolm 
+and Bob Dickerson.
+
+While looking for a solution to detect similarity in short chunks of text,
+in the range of 20-300 words, it became clear that short (length 3 or 4) 
+Ngraphs of individual characters function better than Ngrams of words.
+Similarity in this case is meant to encompass what a human reader might
+discern as similar in style/structure/intent without resorting to syntax 
+analysis. However, for use-cases like plagiarism detection, Ngrams of 
+words is more appropriate for identifying same or similar phrases and
+sentences.
+
+The implementation provides both Ngraph and Ngram constructs to satisfy
+both use-cases.
