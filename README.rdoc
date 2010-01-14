@@ -1,6 +1,5 @@
 = Resemblance
 == Detecting similarities in small chunks of text
-----
 Resemblance is an implementation of Ngram and Ngraph techniques
 for identifying chunks of text with similarities. The techniques are 
 implementations and adaptions of "Detecting short passages of similar  
