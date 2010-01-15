@@ -177,7 +177,7 @@ module Resemblance
       @options = {:character_removal_set => /[^a-zA-Z0-9 ]/, 
                   :token_separator => /\s*/, 
                   :n => DEFAULT_N}.merge(options)
-      @data = data
+      @data = text
       @n_length_sets = {@options[:n] => generate_ngraph_set(generate_words(@data,
                                                                            @options[:character_removal_set],
                                                                            @options[:token_separator]),
