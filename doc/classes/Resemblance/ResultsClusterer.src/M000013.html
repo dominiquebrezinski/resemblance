@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
 </head>
 <body class="standalone-code">
-  <pre><span class="ruby-comment cmt"># File resemblance.rb, line 153</span>
+  <pre><span class="ruby-comment cmt"># File resemblance.rb, line 155</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">min_and_max_r</span>
       <span class="ruby-identifier">largest_r_cluster</span> = <span class="ruby-ivar">@centroids</span>.<span class="ruby-identifier">index</span>(<span class="ruby-ivar">@centroids</span>.<span class="ruby-identifier">max</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">last</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">last</span>})
       <span class="ruby-identifier">smallest_r_cluster</span> = <span class="ruby-ivar">@centroids</span>.<span class="ruby-identifier">index</span>(<span class="ruby-ivar">@centroids</span>.<span class="ruby-identifier">min</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">last</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">last</span>})

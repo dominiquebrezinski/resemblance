@@ -95,7 +95,9 @@ module Resemblance
   #   a hash of options, specifically the key :evaluation_method that
   #   has the corresponding value of :ngraph or :ngram. :ngraph is the 
   #   default if options are not specified. See NGraphSet or NGramSet
-  #   for additional options that can be passed.
+  #   for additional options that can be passed. Also :use_variable_n
+  #   will increase the size of n by 1 if the text and corpus entry are
+  #   long enough to increase the accuracy of the similarity measure.
   #
   # Returns an array where the first entry is the maximum R value seen
   # across the corpus and the second entry is an array of arrays (result set)
@@ -107,7 +109,7 @@ module Resemblance
       name, n_set = *entry
       # switch to longer sequence length if both texts are sufficently long
       if options[:use_variable_n] && (text_n_set.data_size > 1200 && n_set.data_size > 900)
-        options[:n] = 4
+        options[:n] = option[:n] ? options[:n] + 1 : DEFAULT_N + 1
       end
       r = text_n_set.r(n_set, options[:n] || DEFAULT_N)
       r_max = r if r > r_max

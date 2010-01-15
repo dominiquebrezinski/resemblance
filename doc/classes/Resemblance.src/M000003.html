@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
 </head>
 <body class="standalone-code">
-  <pre><span class="ruby-comment cmt"># File resemblance.rb, line 103</span>
+  <pre><span class="ruby-comment cmt"># File resemblance.rb, line 105</span>
   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">evaluate_text_against_corpus</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">corpus</span> = {}, <span class="ruby-identifier">options</span> = {})
     <span class="ruby-identifier">text_n_set</span> = <span class="ruby-identifier">generate_n_set</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">options</span>)
     <span class="ruby-identifier">r_max</span> = <span class="ruby-value">0</span><span class="ruby-value">.0</span>
@@ -18,7 +18,7 @@
       <span class="ruby-identifier">name</span>, <span class="ruby-identifier">n_set</span> = <span class="ruby-operator">*</span><span class="ruby-identifier">entry</span>
       <span class="ruby-comment cmt"># switch to longer sequence length if both texts are sufficently long</span>
       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:use_variable_n</span>] <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">text_n_set</span>.<span class="ruby-identifier">data_size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1200</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">n_set</span>.<span class="ruby-identifier">data_size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">900</span>)
-        <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:n</span>] = <span class="ruby-value">4</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:n</span>] = <span class="ruby-identifier">option</span>[<span class="ruby-identifier">:n</span>] <span class="ruby-operator">?</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:n</span>] <span class="ruby-operator">+</span> <span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-constant">DEFAULT_N</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
       <span class="ruby-keyword kw">end</span>
       <span class="ruby-identifier">r</span> = <span class="ruby-identifier">text_n_set</span>.<span class="ruby-identifier">r</span>(<span class="ruby-identifier">n_set</span>, <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:n</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">DEFAULT_N</span>)
       <span class="ruby-identifier">r_max</span> = <span class="ruby-identifier">r</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">r_max</span>

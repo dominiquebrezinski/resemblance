@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
 </head>
 <body class="standalone-code">
-  <pre><span class="ruby-comment cmt"># File resemblance.rb, line 145</span>
+  <pre><span class="ruby-comment cmt"># File resemblance.rb, line 147</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">results_over_r_threshold</span>(<span class="ruby-identifier">r_threshold</span>)
       <span class="ruby-ivar">@result_set</span>.<span class="ruby-identifier">select</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">nv</span><span class="ruby-operator">|</span>
         <span class="ruby-ivar">@centroids</span>[<span class="ruby-ivar">@cluster</span>.<span class="ruby-identifier">eval</span>(<span class="ruby-identifier">nv</span>)].<span class="ruby-identifier">last</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">r_threshold</span>
