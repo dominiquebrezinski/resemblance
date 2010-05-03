@@ -268,7 +268,7 @@ module Resemblance
   class NGramSet < NGraphSet
     # See NGraphSet ... only difference is :token_separator is /\s+/
     def initialize(text, options = {}) 
-      super(data, {:token_separator => /\s+/}.merge(options))
+      super(text, {:token_separator => /\s+/}.merge(options))
     end
   end
  

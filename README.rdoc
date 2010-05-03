@@ -17,3 +17,9 @@ sentences.
 
 The implementation provides both Ngraph and Ngram constructs to satisfy
 both use-cases.
+
+== Warning
+The file test_profiles_texts.yml contains a test set gathered from an adult/singles site, and some of the content is sexual in nature. If you find such content offense, do not read the file contents or simply delete it. It is provided to feed test.rb as an example usage of the library, and was the best representative data set of real data I could find.
+
+== Library documentation
+:include: resemblance.rb
